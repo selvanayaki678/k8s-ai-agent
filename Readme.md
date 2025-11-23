@@ -2,6 +2,9 @@
 
 Talk to your Kubernetes cluster using simple questions!
 
+![k8s-agent (1)](https://github.com/user-attachments/assets/86b7ec14-29ee-4e67-8244-d005062b5a93)
+
+
 ## What Does This Do?
 
 Ask questions about your Kubernetes cluster in plain English and get answers.
@@ -18,7 +21,7 @@ Before you start, make sure you have:
 - **Docker** installed on your computer
 - **Terraform** installed (to create the cluster)
 - **kubectl** installed (to manage Kubernetes)
-- **Python 3.8+** installed
+- **Python 3.10+** installed
 - **Git** installed
 
 ## What is MCP Server?
