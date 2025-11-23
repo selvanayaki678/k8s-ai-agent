@@ -3,7 +3,7 @@ from strands import Agent
 from strands.models import BedrockModel
 from strands.tools.mcp import MCPClient
 
-LOADBALANCER_URL = "http://ae97ab368919d441a8df22c0e84d99af-1269055025.us-east-1.elb.amazonaws.com:8080/sse"
+LOADBALANCER_URL = "http://a4e79bf77a21d46cfacb449bc48415ea-461712490.us-east-1.elb.amazonaws.com:8080/sse"
 
 client = None
 agent = None
@@ -14,7 +14,8 @@ def reconnect():
     
     if client:
         try:
-            client.stop()
+            # Use context manager exit protocol
+            client.__exit__(None, None, None)
         except:
             pass
      
@@ -65,4 +66,7 @@ while True:
 
 print("Goodbye!")
 if client:
-    client.stop()
+    try:
+        client.__exit__(None, None, None)
+    except:
+        pass
